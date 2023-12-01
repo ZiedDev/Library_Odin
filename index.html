@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./logic.js" defer></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Library</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <div class="logo">
+                <h1>The Library</h1>
+            </div>
+            <div class="repository">
+                <a href="https://github.com/ZiedDev/Library_Odin" target="_blank">
+                    <h3>Repository</h3>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <main class="main-section">
+        <button class="add-book-button" id="add-book-button" onclick="toggleAddBookModal()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                <g fill="none" stroke="#CCD6DD" stroke-width="1.5">
+                    <path
+                        d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z" />
+                    <path stroke-linecap="round" d="M15 12h-3m0 0H9m3 0V9m0 3v3" />
+                </g>
+            </svg>
+            <h2>Add A Book</h2>
+        </button>
+
+        <section class="all-books-container" id="all-books-container">
+            <!-- Done in Javascript -->
+        </section>
+
+        <dialog class="add-book-modal" id="add-book-modal" close>
+            <h2>Add a book</h2>
+            <form method="dialog">
+                <label for="title-name">Title: </label>
+                <input class="title-name" id="title-name" type="text" required>
+
+                <label for="author-name">Author: </label>
+                <input class="author-name" id="author-name" type="text" required>
+
+                <label for="num-of-pages">Number of Pages: </label>
+                <input class="num-of-pages" id="num-of-pages" type="number" min="1" required>
+
+                <div class="is-read-container">
+                    <label for="isRead">Have you read it?: </label>
+                    <input class="isRead" id="isRead" type="checkbox">
+                </div>
+
+                <label for="hue-changer">Color: </label>
+                <input class="hue-changer" id="hue-changer" style="--hue: 0" type="range" min="0" max="360" value="0"
+                    oninput="modalColorSelector()">
+
+                <button class="add-book-modal-add-button" onclick="addBookToLibrary()">Add</button>
+            </form>
+        </dialog>
+    </main>
+    <footer class="page-footer">
+        <h3>© <a href="https://github.com/ZiedDev" target="_blank">Zied</a></h3>
+    </footer>
+</body>
+
+</html>
